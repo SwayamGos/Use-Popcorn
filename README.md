@@ -16,6 +16,10 @@ The project's features include:
 
 - Added local storage support. Watched movies will now be stored in the browser cache, which will enable your watched catalog to persist even after reloads. Please do not clear the cache in the browser from this website for this feature to work.
 
+- Added keybind support!
+    + Just press the enter key to activate the cursor active in the movie search bar.
+    + When viewing any movie, press escape to return to your watched list.
+
 ## NOTE:
 
 ### I have used the OMDB api for fetching movies, and it only allows 1000 api requests each day in it's free tier. If you dont get the movies for some reason, most likely the application has reached the limit for fetching movies. In such a scenario, please try to revisit the application the next day.

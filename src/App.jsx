@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import StarRating from "./StarRating";
 
 const average = (arr) =>
@@ -23,6 +23,23 @@ function Logo() {
 }
 
 function Search({ query, setQuery }) {
+  const inputEl = useRef(null);
+
+  useEffect(function () {
+    function callback(e) {
+      if (document.activeElement === inputEl.current) return;
+
+      if (e.code === "Enter") {
+        inputEl.current.focus();
+        setQuery("");
+      }
+    }
+
+    document.addEventListener("keydown", callback);
+
+    return () => document.removeEventListener("keydown", callback);
+  }, [setQuery]);
+
   return (
     <input
       className='search'
@@ -30,6 +47,7 @@ function Search({ query, setQuery }) {
       placeholder='Search movies...'
       value={query}
       onChange={(e) => setQuery(e.target.value)}
+      ref={inputEl}
     />
   );
 }
@@ -60,9 +78,10 @@ function Box({ children }) {
 }
 
 function MovieList({ movies, onSelectMovie }) {
+  console.log(movies);
   return (
     <ul className='list list-movies'>
-      {movies?.map((movie) => (
+      {movies.map((movie) => (
         <Movie movie={movie} key={movie.imdbID} onSelectMovie={onSelectMovie} />
       ))}
     </ul>
@@ -100,6 +119,7 @@ function MovieDetails({
   useEffect(
     function () {
       function callback(e) {
+        // console.log("hi");
         if (e.code === "Escape") onCloseMovie();
       }
 
@@ -234,7 +254,7 @@ function MovieDetails({
 }
 
 function WatchedSummary({ watched }) {
-  console.log(watched);
+  // console.log(watched);
   const avgImdbRating = average(watched?.map((movie) => movie.imdbRating));
   const avgUserRating = average(watched?.map((movie) => movie.userRating));
   const avgRuntime = average(watched?.map((movie) => movie.runtime));
@@ -339,6 +359,7 @@ export default function App() {
   }
 
   function handleCloseMovie() {
+    console.log("hi");
     setSelectedId(null);
   }
 
