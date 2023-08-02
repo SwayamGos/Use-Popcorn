@@ -22,4 +22,5 @@ The project's features include:
 
 ## PROJECT LINK:
 
+Please refer to the link in the 'About' section of the repositoty. If that does not work, try the link below. 
 https://glittery-rugelach-e2c423.netlify.app/
