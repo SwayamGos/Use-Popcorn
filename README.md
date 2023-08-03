@@ -1,12 +1,12 @@
 # USE POPCORN
 
-It is a simple web application which can be used to keep track of movies you have watched. I built this to practice working with the useEffect hook in react.
+It is a simple web application which can be used to keep track of movies and shows you have watched. I built this to practice working with the useEffect hook in react.
 
 The project's features include:
 
-- Searching for any movie using the search bar and getting more detailed information on it, including a plot summary(without spoilers) and IMDB ratings. This can also be used if you are interested in a particular movie and want to know more about it.
+- Search for any movie or show using the search bar and get more detailed information on it, including a plot summary(without spoilers) and IMDB ratings. This can also be used if you are interested in a particular movie or show and want to know more about it.
 
-- Rating a movie of your choice. However, if you rate a movie, the application assumes you have watched it. Please DO NOT rate a movie if you havent watched it, as it also makes the user ratings less reliable.
+- Rating a movie or show of your choice. However, if you rate a movie, the application assumes you have watched it. Please DO NOT rate a movie if you havent watched it, as it also makes the user ratings less reliable.
 
 - Adding movies to your watched list. You can add a movie to your watchlist once you have rated them. This ensures that you have watched the movie.
 
